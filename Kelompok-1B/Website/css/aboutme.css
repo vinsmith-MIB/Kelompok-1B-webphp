@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body::before {
+  content: "";
+  background-image: linear-gradient(
+      115deg,
+      rgba(31, 31, 108, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url('../../image/aboutme-background.jpg');
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: orange;
+}
+
+/*header*/
+header {
+  position: relative;
+  padding: 0 2rem;
+  position: absolute;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn {
+  background-color: rgb(132, 34, 213);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/*DROPDOWN MENU */
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.417);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000;
+}
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero*/
+section#hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
+}
+
+main {
+  height: auto;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 5rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+main #about {
+  background-color: #00000080;
+  padding: 2rem;
+  border-radius: 12px;
+  height: 76vh;
+  overflow-y: scroll;
+}
+
+main #about::-webkit-scrollbar {
+  display: none;
+}
+main h1 {
+  text-align: center;
+}
+
+#about div {
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+#about p {
+  margin-top: 1rem;
+}
+
+main #ourteam {
+  padding: 0;
+  width: 150vw;
+  background-color: #eaeaea;
+  margin-top: 3.5rem;
+  color: #303030;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 1px #00000080, 0 0 34px #00000080;
+  border: 1px solid #898989;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 98vw;
+  justify-content: space-evenly;
+}
+
+#ourteam .person {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+#ourteam .person:nth-child(1):hover {
+  box-shadow: 0 0 1px #00000080, 0 0 34px #00000080;
+}
+#ourteam .person:nth-child(2):hover {
+  box-shadow: 0 0 1px #00000080, 0 0 34px #00000080;
+}
+#ourteam .person:nth-child(3):hover {
+  box-shadow: 0 0 1px #00000080, 0 0 34px #00000080;
+}
+
+
+#ourteam .foto {
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 3px solid #00000080;
+
+}
+#ourteam img {
+  width: 250px;
+  height: auto;
+  
+}
+
+@media (max-width: 600px) {
+  #ourteam {
+    padding: 0;
+    width: 150vw;
+    min-height: 150vh;
+    background-color: #eaeaea;
+    margin-top: 3.5rem;
+    color: #303030;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 1px #00000080, 0 0 34px #00000080;
+    border: 1px solid #898989;
+  }
+  .wrapper {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+}
